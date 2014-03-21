@@ -1,0 +1,187 @@
+@import 'normalize';
+
+*, *:before, *:after{
+
+  box-sizing: border-box;
+
+}
+
+@font-face {
+    font-family: 'mulilight';
+    src: url('fonts/muli-light-webfont.eot');
+    src: url('fonts/muli-light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/muli-light-webfont.woff') format('woff'),
+         url('fonts/muli-light-webfont.ttf') format('truetype'),
+         url('fonts/muli-light-webfont.svg#mulilight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+	@mixin breakpoint($point) {
+		@if $point == papa-bear {
+			@media (max-width: 1600px) { @content; }
+		}
+		@else if $point == mama-bear {
+			@media (max-width: 1250px) { @content; }
+		}
+		@else if $point == baby-bear {
+			@media (max-width: 650px)  { @content; }
+		}
+	}
+
+body {
+
+  background: #2c3e50;
+  color: #ecf0f1;
+  font-family: 'mulilight', sans-serif;
+
+}
+
+.titleSection{
+
+  text-align: center;
+
+}
+
+.home-icon{
+
+  width: 4em;
+  margin-bottom: -0.5em;
+
+}
+
+.searchField{
+
+  color: #000;
+
+  input{
+
+    width: 70%;
+    display: block;
+
+    margin: 0 auto 0.5em auto;
+
+    font-size: 2em;
+
+  }
+
+  .searchBox{
+
+    border: none;
+
+  }
+
+  .submitButton{
+
+    background: #2ecc71;
+    border: none;
+
+  }
+
+}
+
+a {
+  color: #00B7FF;
+}
+
+.group:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.container{
+
+  width: 95%;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  justify-content: center;
+  //justify-content: space-around;
+
+
+
+}
+
+/*.resultWrap{
+
+  width: 12.5%;
+  //float: left;
+
+  //padding: 0.5em;
+
+}*/
+
+.result{
+
+  background: #ecf0f1;
+  color: black;
+  margin: 0.5em;
+  padding: 0.5em;
+
+  /*float: left;*/
+
+  width: 12.5%;
+
+  @include breakpoint(baby-bear) {
+
+    width: 100%;
+
+    img{
+
+      width: 100%;
+
+    }
+
+  }
+
+  img{
+
+    max-width: 100%;
+
+  }
+
+}
+
+.ratingFav {
+
+  div{
+
+    float: left;
+
+    width: 50%;
+
+  }
+
+}
+
+.fav{
+
+  text-align: right;
+
+}
+
+.icon {
+	display: inline-block;
+	width: 1.5em;
+	height: 1.5em;
+	fill: #000000;
+}
+
+.hidden{
+
+  display: none;
+
+}
+
+.icon-heart {
+	fill: #e74c3c;
+}
+.icon-heart2 {
+	fill: #e74c3c;
+
+}

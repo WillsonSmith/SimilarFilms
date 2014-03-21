@@ -1,0 +1,17 @@
+doctype html
+html
+  head
+    title= title
+    meta(name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no")
+
+    //link(rel='stylesheet', href='/stylesheets/normalize.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    block content
+
+  script(src='/javascripts/matchmedia.js')
+  script(src='/javascripts/picturefill.js')
+  script(src='/javascripts/localforage/dist/localforage.js')
+
+  block additionalScript
+  script(src='/javascripts/app.js')

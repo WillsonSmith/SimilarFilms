@@ -1,0 +1,1 @@
+var apiKey=require("../keys/api.js").movieDB,getData=require("./getData.js").getData;exports.list=function(e,a){var i=e.params.movie;getData({title:"index",path:"/3/movie/"+i+"/similar_movies?api_key="+apiKey},e,a,i)};

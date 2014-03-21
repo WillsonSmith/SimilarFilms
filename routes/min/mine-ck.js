@@ -1,0 +1,1 @@
+exports.list=function(e,t){t.render("mine",{title:"Test"})};
