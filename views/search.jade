@@ -1,7 +1,15 @@
 extends layout
 
 block content
-  h1 SimilarFilms
+  nav
+    ul(class='group')
+      li
+        a(href='/') Home
+          //img(class='home-icon' src='/images/home.svg')
+      li
+        a(href='/mine') Mine
+  div(class='title')
+    h1 #{title}
     //h2 #{title}
 
   include common
