@@ -26,6 +26,7 @@ picturefill();
           }
 
       }
+    }
 
     function clickEvent(e){
 
@@ -50,7 +51,7 @@ picturefill();
       function addFavourite(item, id, rating, url){
 
         favourited.results.push(item);
-        
+
         favourited.extraData[item] = {
 
           "title": item,
@@ -65,7 +66,7 @@ picturefill();
 
       }
 
-      if (index !== -1) {
+      if (index != null && index !== -1) {
 
         favourited.results.splice(index, 1);
         delete favourited.extraData[film];
@@ -76,11 +77,17 @@ picturefill();
 
         }.bind(this));
 
-      } else if (!favourited) {
+      } else if (favourited == null) {
 
         favourited = { "results": [], "extraData": [] };
 
         addFavourite(film, id, rating, posterURL);
+        /*localforage.setItem('favourites', favourited, function(){
+
+          setItem(this);
+
+        }.bind(this));*/
+        //setItem(this);
 
 
       } else {
@@ -104,7 +111,7 @@ picturefill();
 
     }
 
-  }
+
 
     localforage.getItem('favourites').then(function(val){
 
@@ -121,7 +128,9 @@ picturefill();
 
   });*/
   //localforage.setItem('favourites', { results: [], extraData: {} }, function(){
+  //localforage.removeItem('favourites', function(){
   init();
+  //});
   //});
 
 

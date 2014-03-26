@@ -58,7 +58,7 @@ module.exports.getData = function getHome(opts, req, res, query){
 
   function render(data){
 
-    res.render(opts.title, { title: opts.title, results: data.results });
+    res.render(opts.view, { title: opts.title, results: data.results });
 
   }
 

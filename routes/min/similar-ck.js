@@ -1,1 +1,1 @@
-var apiKey=require("../keys/api.js").movieDB,getData=require("./getData.js").getData;exports.list=function(e,a){var i=e.params.movie;getData({title:"index",path:"/3/movie/"+i+"/similar_movies?api_key="+apiKey},e,a,i)};
+var apiKey=require("../keys/api.js").movieDB,getData=require("./getData.js").getData;exports.list=function(a,i){var e=a.params.movie;getData({view:"similar",title:"Similar To "+a.params.movie,path:"/3/movie/"+e+"/similar_movies?api_key="+apiKey},a,i,e)};
