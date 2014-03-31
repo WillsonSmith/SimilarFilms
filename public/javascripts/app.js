@@ -61,9 +61,6 @@ picturefill();
 
         };
 
-
-
-
       }
 
       if (index != null && index !== -1) {
@@ -79,14 +76,15 @@ picturefill();
 
       } else if (favourited == null) {
 
-        favourited = { "results": [], "extraData": [] };
+        favourited = { "results": [], "extraData": {} };
 
         addFavourite(film, id, rating, posterURL);
-        /*localforage.setItem('favourites', favourited, function(){
+
+        localforage.setItem('favourites', favourited, function(data){
 
           setItem(this);
 
-        }.bind(this));*/
+        }.bind(this));
         //setItem(this);
 
 
@@ -94,7 +92,7 @@ picturefill();
 
         addFavourite(film, id, rating, posterURL);
 
-        localforage.setItem('favourites', favourited, function(){
+        localforage.setItem('favourites', favourited, function(data){
 
           setItem(this);
 
@@ -110,7 +108,6 @@ picturefill();
       results[i].querySelector('.fav').addEventListener('click', clickEvent);
 
     }
-
 
 
     localforage.getItem('favourites').then(function(val){

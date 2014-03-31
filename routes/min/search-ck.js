@@ -1,1 +1,1 @@
-var apiKey=require("../keys/api.js").movieDB,getData=require("./getData.js").getData;exports.list=function(e,a){var t=e.params.query;getData({title:"index",path:"/3/search/movie?query="+encodeURIComponent(t)+"&api_key="+apiKey},e,a,t)};
+var apiKey=require("../keys/api.js").movieDB,getData=require("./getData.js").getData;exports.list=function(e,a){var t=e.params.query;getData({view:"search",title:"search",path:"/3/search/movie?query="+encodeURIComponent(t)+"&api_key="+apiKey},e,a,t)};

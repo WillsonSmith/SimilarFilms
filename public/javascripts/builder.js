@@ -44,8 +44,12 @@ var builder = (function(){
 
       localforage.getItem('favourites', function(val){
 
-        var firstResult = document.querySelector('.result');
-        var data = val.extraData;
+        var firstResult = document.querySelector('.result'),
+            data;
+
+        if(val){
+          data = val.extraData;
+        }
 
         document.getElementById('resultId').removeChild(element);
         //builder.setData(firstResult, data[0]);
@@ -80,6 +84,18 @@ var builder = (function(){
 
       });
 
+    },
+
+    prepDelete: function(){
+
+      document.getElementById('deleteData').addEventListener('click', function(){
+
+        localforage.removeItem('favourites').then(function(){
+          document.location.reload(true);
+        });
+
+      });
+
     }
 
   };
@@ -87,5 +103,5 @@ var builder = (function(){
 })();
 
 
-
+builder.prepDelete();
 builder.makeResult(document.querySelector('.result'));
