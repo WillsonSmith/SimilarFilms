@@ -2,6 +2,52 @@ var builder = (function(){
 
   return{
 
+    checkHash: function(callback){
+      var answer,
+          parts = location.hash.split('/'),
+          data;
+
+      if (parts[0] === '#!'){
+
+         answer = confirm("Are you sure you want clear all current movies and add this new set?");
+         if (answer){
+
+            //parts = location.hash.split('/');
+
+            if (parts[0] === '#!'){
+              data = location.hash.substr(location.hash.indexOf("/") + 1);
+
+              //parts[1];
+              //console.log(JSON.parse(data));
+
+              localforage.setItem('favourites', JSON.parse(data), function(data){
+
+
+                location.hash = '';
+
+                callback();
+
+
+              });
+
+
+
+            }
+
+          } else{
+
+            callback();
+
+          }
+
+        } else {
+
+          callback();
+
+        }
+
+    },
+
     setData: function(element, data){
 
       var link = element.querySelector('.simLink'),
@@ -42,7 +88,11 @@ var builder = (function(){
 
       var applyTo = document.getElementById('resultId');
 
+
+      builder.checkHash(function(){
+
       localforage.getItem('favourites', function(val){
+
 
         var firstResult = document.querySelector('.result'),
             data;
@@ -52,6 +102,8 @@ var builder = (function(){
         }
 
         document.getElementById('resultId').removeChild(element);
+
+        //});
         //builder.setData(firstResult, data[0]);
 
 
@@ -81,20 +133,45 @@ var builder = (function(){
         }
         applyTo.appendChild(toAppend);
 
-
       });
+    });
 
     },
 
-    prepDelete: function(){
+    prepEvents: function(){
 
       document.getElementById('deleteData').addEventListener('click', function(){
+        var answer = confirm("Are you sure you want to remove all movies?");
 
-        localforage.removeItem('favourites').then(function(){
-          document.location.reload(true);
+        if (answer){
+          localforage.removeItem('favourites').then(function(){
+            document.location.reload(true);
+          });
+        }
+
+      }, false);
+
+      document.getElementById('backupMovies').addEventListener('click', function(){
+
+        localforage.getItem('favourites', function(val){
+
+          var firstResult = document.querySelector('.result'),
+              data;
+
+
+          if(val){
+            val = JSON.stringify(val);
+            //console.log(JSON.stringify(val));
+
+            //location.hash='!/' + val;
+            document.getElementById('textareaLink').value = 'http://similarfilms.com/mine/#!/' + val;
+            location.hash = 'textareaLink';
+
+          }
+
         });
 
-      });
+      }, false);
 
     }
 
@@ -103,5 +180,6 @@ var builder = (function(){
 })();
 
 
-builder.prepDelete();
+builder.prepEvents();
 builder.makeResult(document.querySelector('.result'));
+

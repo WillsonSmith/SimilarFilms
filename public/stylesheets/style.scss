@@ -141,6 +141,26 @@ nav{
   margin: 0 0 1em 0;
 
 }
+
+.saveData{
+
+  width: 100%;
+  text-align: center;
+
+  margin: 0 0 1em 0;
+
+}
+
+.addData{
+
+  background: #2ecc71;
+  border: none;
+  width: 95%;
+  font-size: 2em;
+  margin: 0 auto;
+
+}
+
 .deleteData{
 
   background: #e74c3c;
@@ -266,3 +286,55 @@ a {
   }
 
 }
+
+#textareaLink:target{
+
+  display: block;
+
+}
+
+.textArea{
+
+  display: none;
+
+  width: 95%;
+  margin: 0 auto;
+
+  color: #2c3e50;
+
+}
+
+/*#textareaLink:not(textarea):target{
+
+  display: block;
+
+}
+
+.text-area{
+
+  background: rgba(0,0,0,0.5);
+
+  display: none;
+
+  position: absolute;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+
+
+  textarea{
+
+    position: relative;
+
+    width: 50%;
+    height: 25%;
+    margin: 4em auto 0 auto;
+
+    display: block;
+
+
+
+  }
+
+}*/

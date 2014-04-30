@@ -31,8 +31,13 @@ block content
           svg(class="icon icon-heart2 hidden" viewBox="0 0 32 32")
             use(xlink:href="#icon-heart2")
   div(class='container')
+    div(class='saveData')
+      p Put these on another device by backing these up
+      button(class='addData' id='backupMovies') Back up
+      input(type='text' id='textareaLink' class='textArea')
     div(class='removeData')
-      p Having troubles? Try deleting your saved films.
       button(class='deleteData' id='deleteData') delete
+      p Having troubles? Try deleting your saved films.
+
 block additionalScript
   script(src='/javascripts/builder.js')
