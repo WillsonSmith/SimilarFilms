@@ -6,6 +6,8 @@ div(class='searchField')
 div(class='container group')
   -for result in results
     div(class='result' data-film='#{result.title}' data-id='#{result.id}')
+      div(class='tweetThis')
+        a(href='http://twitter.com/home/?status=I\'m watching #{result.title} because of http://similarfilms.com') Tweet
       a(href='/similar/#{result.id}')
         span(class='picture' data-picture data-alt='#{result.title}')
           span(class="sml" data-src="http://image.tmdb.org/t/p/w300/#{result.poster_path}")
