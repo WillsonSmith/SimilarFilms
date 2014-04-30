@@ -133,6 +133,8 @@ var builder = (function(){
         }
         applyTo.appendChild(toAppend);
 
+        setup.init();
+
       });
     });
 

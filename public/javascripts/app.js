@@ -1,11 +1,14 @@
 picturefill();
 
-(function app(){
+var setup = (function app(){
 
-  function init(){
+  return {
+
+    init: function(){
     var favourited,
         results = document.querySelectorAll('.result');
 
+      console.log(results);
     function checkFavStatus(value){
 
       var film;
@@ -126,14 +129,14 @@ picturefill();
   });*/
   //localforage.setItem('favourites', { results: [], extraData: {} }, function(){
   //localforage.removeItem('favourites', function(){
-  init();
+  //init();
   //});
   //});
-
+  };
 
 
 })();
-
+setup.init();
 
 /*
 localforage.setItem('favouriteData', { results: [
