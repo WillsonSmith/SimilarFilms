@@ -15,7 +15,7 @@ var builder = (function(){
             //parts = location.hash.split('/');
 
             if (parts[0] === '#!'){
-              data = location.hash.substr(location.hash.indexOf("/") + 1);
+              data = decodeURI(location.hash.substr(location.hash.indexOf("/") + 1));
 
               //parts[1];
               //console.log(JSON.parse(data));
