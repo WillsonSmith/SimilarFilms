@@ -8,7 +8,6 @@ var setup = (function app(){
     var favourited,
         results = document.querySelectorAll('.result');
 
-      console.log(results);
     function checkFavStatus(value){
 
       var film;

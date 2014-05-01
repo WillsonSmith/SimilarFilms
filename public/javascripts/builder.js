@@ -16,8 +16,7 @@ var builder = (function(){
 
             if (parts[0] === '#!'){
               data = decodeURI(location.hash.substr(location.hash.indexOf("/") + 1));
-              console.log(data);
-              console.log(location.hash.substr(location.hash.indexOf("/") + 1));
+
 
               //parts[1];
               //console.log(JSON.parse(data));
@@ -168,7 +167,7 @@ var builder = (function(){
             //console.log(JSON.stringify(val));
 
             //location.hash='!/' + val;
-            document.getElementById('textareaLink').value = 'http://similarfilms.com/mine/#!/' + val;
+            document.getElementById('textareaLink').value = 'http://similarfilms.com/mine/#!/' + encodeURI(val);
             location.hash = 'textareaLink';
 
           }
