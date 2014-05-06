@@ -15,9 +15,7 @@ to provide a rich user experience.
 
 Most of this website was built in a couple days, with various tweaks and finishing-ups
 taking a few extra days. As an ongoing project, many things have yet to be finalised,
-and it is expected you will find bugs. Most notably in the bug department is that the
-website has trouble functioning on iOS 7 at the moment, but I know why the problem exists,
-I just have to come up with a solution.
+and it is expected you will find bugs. 
 
 
 To use the site:
